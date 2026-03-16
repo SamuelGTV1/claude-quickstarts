@@ -179,7 +179,10 @@ def _reset_model_conf():
 async def main():
     """Render loop for streamlit"""
     setup_state()
-
+    # Check for API Key immediately
+    if not st.session_state.api_key:
+        st.error("Error: ANTHROPIC_API_KEY is not set. Please set it as an environment variable or enter it in the sidebar.")
+        st.stop()
     st.markdown(STREAMLIT_STYLE, unsafe_allow_html=True)
 
     st.title("Claude Computer Use Demo")
