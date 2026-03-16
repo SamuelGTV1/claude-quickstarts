@@ -165,6 +165,16 @@ When implementing computer use yourself, we recommend using XGA resolution (1024
 
 ## Development
 
+### Troubleshooting
+**Docker Disk Space Usage**
+If you notice that your disk space is filling up, it may be due to unused Docker containers and images accumulating. You can clean up these resources by running: 
+
+```bash
+docker system prune -a
+Note: This command will remove all unused containers, networks, and images.
+
+```bash
+docker system prune -a
 ```bash
 ./setup.sh  # configure venv, install development dependencies, and install pre-commit hooks
 docker build . -t computer-use-demo:local  # manually build the docker image (optional)
